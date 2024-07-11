@@ -211,17 +211,17 @@ export default function Home() {
                           späteren Zeitpunkt wieder einloggen und deine Meinung
                           zu diesen abgeben.
                         </p>
-                        {/* <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
+                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
                           Diese Umfrage ist vom{" "}
                           <span className="font-extrabold text-black">
-                            22.04.
+                            16.07.
                           </span>{" "}
                           bis{" "}
                           <span className="font-extrabold text-black">
-                            06.05.2024
+                            29.07.2024
                           </span>{" "}
                           geöffnet.
-                        </p> */}
+                        </p>
                         <p className="mt-10 ml-4 mr-4 mb-6 font-bold">
                           Skala der Bewertung
                         </p>

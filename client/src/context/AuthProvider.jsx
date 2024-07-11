@@ -11,7 +11,7 @@ export default function AuthProvider({ children }) {
 
   useEffect(() => {
     axiosClient
-      .get("/profile")
+      .get("/user/profile")
       .then((response) => {
         setUser(response.data);
       })
@@ -23,7 +23,7 @@ export default function AuthProvider({ children }) {
       });
 
     axiosClient
-      .get("/candidateList")
+      .get("/candidates/candidateList")
       .then((response) => {
         setCandidates(response.data);
       })
@@ -37,7 +37,7 @@ export default function AuthProvider({ children }) {
 
   const login = async (data) => {
     axiosClient
-      .post("/login", data)
+      .post("/user/login", data)
       .then((response) => {
         setUser(response.data);
         setTimeout(() => {
@@ -55,7 +55,7 @@ export default function AuthProvider({ children }) {
 
   const logout = async () => {
     axiosClient
-      .get("/logout")
+      .get("/user/logout")
       .then((response) => {
         setUser(null);
       })
