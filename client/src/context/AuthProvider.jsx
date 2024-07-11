@@ -23,7 +23,7 @@ export default function AuthProvider({ children }) {
       });
 
     axiosClient
-      .get("/candidates/candidateList")
+      .get("/candidate/candidateList")
       .then((response) => {
         setCandidates(response.data);
       })
