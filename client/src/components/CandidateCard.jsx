@@ -18,7 +18,7 @@ export default function CandidateCard({ candidate, user }) {
 
   const onSubmit = (data) => {
     axiosClient
-      .put(`/candidates/update/${candidate._id}`, data, {
+      .put(`/candidate/update/${candidate._id}`, data, {
         withCredentials: true,
       })
       .then((response) => {
