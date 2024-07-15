@@ -27,7 +27,7 @@ const getCandidate = asyncWrapper(async (req, res, next) => {
 });
 
 const getCandidates = asyncWrapper(async (req, res, next) => {
-  const candidates = await Candidate.find({});
+  const candidates = await Candidate.find({}).sort({ department: 1 });
 
   res.json(candidates);
 });
