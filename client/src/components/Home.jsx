@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { useForm } from "react-hook-form";
 import CandidateCard from "./CandidateCard";
@@ -9,6 +9,9 @@ import kriterien from "../assets/kriterien2.png";
 export default function Home() {
   const { user, logout, login, candidates } = useContext(AuthContext);
 
+  const [visibilityGerman, setVisibilityGerman] = useState(false);
+  const [visibilityEnglish, setVisibilityEnglish] = useState(true);
+
   const {
     register,
     handleSubmit,
@@ -17,6 +20,16 @@ export default function Home() {
 
   const onSubmit = (data) => {
     login(data);
+  };
+
+  const handleVisibility = () => {
+    if (visibilityGerman === false && visibilityEnglish === true) {
+      setVisibilityGerman(true);
+      setVisibilityEnglish(false);
+    } else {
+      setVisibilityGerman(false);
+      setVisibilityEnglish(true);
+    }
   };
 
   return (
@@ -159,18 +172,29 @@ export default function Home() {
             <>
               {user.role === "user" ? (
                 <>
-                  {/* <p className="hidden lg:flex justify-end  mr-5 mt-3 font-semibold">
-                    Anmelde ID:{" "}
-                    <span className="font-bold ml-1">{" " + user.logInID}</span>
-                  </p> */}
-                  <div className="hero flex justify-center items-center h-2/6 w-2/6 bg-cover bg-center ml-auto mr-auto lg:w-1/6">
-                    <img
-                      className="inline"
-                      src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
-                      alt="logo"
-                    />
-                  </div>
-                  <div className="font-anek text-md lg:text-lg mt-6 bg-cover bg-center mx-auto text-center max-w-xxl">
+<div className="hero flex justify-around items-center bg-cover bg-center p-4">
+  <div className="invisible">placeholder</div>
+  <div className="flex justify-center">
+    <img
+      className="w-1/6 ml-36"
+      src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
+      alt="logo"
+    />
+  </div>
+  <div className="mr-6 flex items-center">
+    <button 
+      onClick={handleVisibility} 
+      className="bg-black text-white font-semibold py-2 px-4 rounded hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 whitespace-nowrap"
+    >
+      Übersetzen / Translate 
+    </button>
+  </div>
+</div>
+
+                  <div
+                    hidden={visibilityGerman}
+                    className="font-anek text-md lg:text-lg mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
+                  >
                     <div className="items-center grid grid-cols-1 lg:grid-cols-3 gap-4">
                       <div className="text-center pl-[0%] lg:col-span-1 lg:pl-[10%] lg:text-left">
                         <p className="text-gray-600 font-medium pr-0 lg:pr-6">
@@ -179,16 +203,7 @@ export default function Home() {
                           geht es darum, das persönliche Engagement aller
                           Mitarbeiter zu bewerten.
                         </p>
-                        {/* <p className="text-gray-500 font-medium mt-6">
-                          Du bewertest <span className="font-extrabold text-black">Einsatzbereitschaft, Engagement, den
-                          persönlichen Beitrag zu Gruppenzielen, die
-                          Bereitschaft anderen zu helfen, die Teamfähigkeit, die
-                          ehrliche Bemühung, dem Kunden zu helfen,
-                          Qualitätsbewusstsein, das Leben unserer Werte</span>. Also
-                          grundsätzlich die Dinge, die wir als Unternehmen
-                          anstreben.
-                        </p> */}
-                                                <p className="text-gray-500 font-medium mt-6">
+                        <p className="text-gray-500 font-medium mt-6">
                           Diese Anfrage ist
                           <span className="font-extrabold text-black">
                             {" "}
@@ -207,7 +222,6 @@ export default function Home() {
                         />
                       </div>
                       <div className="pr-[0%] lg:col-span-1 lg:text-right lg:pr-[10%]">
-
                         <p className="text-center text-gray-500 font-medium lg:text-right lg:pl-4">
                           Du brauchst für die Bewertung aller Kollegen ca. 10
                           Minuten. Falls du zu einigen Kollegen nicht direkt
@@ -217,7 +231,7 @@ export default function Home() {
                         </p>
                         <p className="text-center text-gray-500 font-medium mt-6 lg:text-right">
                           Diese Umfrage ist vom
-                          <span className="font-extrabold text-black">
+                          <span className="font-extrabold text-black mr-0.5">
                             {" "}
                             16.07.
                           </span>
@@ -231,9 +245,62 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+                  <div
+                    hidden={visibilityEnglish}
+                    className="font-anek text-md lg:text-lg mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
+                  >
+                    <div className="items-center grid grid-cols-1 lg:grid-cols-3 gap-4">
+                      <div className="text-center pl-[0%] lg:col-span-1 lg:pl-[10%] lg:text-left">
+                        <p className="text-gray-600 font-medium pr-0 lg:pr-6">
+                          Dear team, our main goal is to employ only the best
+                          employees. The team assessment is about evaluating the
+                          personal engagement of all employees.
+                        </p>
+                        <p className="text-gray-500 font-medium mt-6">
+                          This request is
+                          <span className="font-extrabold text-black">
+                            {" "}
+                            anonymous
+                          </span>
+                          . This means that no one, not even the management,
+                          will know how you rated your colleagues.
+                        </p>
+                      </div>
+                      <div className="flex justify-center items-center lg:col-span-1">
+                        <img
+                          className="inline-block w-[90%] lg:w-auto"
+                          src={kriterien}
+                          alt="logo"
+                        />
+                      </div>
+                      <div className="pr-[0%] lg:col-span-1 lg:text-right lg:pr-[10%]">
+                        <p className="text-center text-gray-500 font-medium lg:text-right lg:pl-4">
+                          You will need about 10 minutes to rate all colleagues.
+                          If you don't have an immediate opinion about some
+                          colleagues, you can log in again later and provide
+                          your opinion on them.
+                        </p>
+                        <p className="text-center text-gray-500 font-medium mt-6 lg:text-right">
+                          This survey is open from
+                          <span className="font-extrabold text-black">
+                            {" "}
+                            July 16th
+                          </span>
+                          until
+                          <span className="font-extrabold text-black">
+                            {" "}
+                            July 29th, 2024{" "}
+                          </span>
+                          .
+                        </p>
+                      </div>
+                    </div>
+                  </div>
 
                   <div className="flex justify-center">
-                    <p className="mt-6 mb-6 font-bold lg:mt-8">Skala der Bewertung</p>
+                    <p className="mt-6 mb-6 font-bold lg:mt-8">
+                      Skala der Bewertung
+                    </p>
                   </div>
 
                   <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
