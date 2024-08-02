@@ -4,7 +4,7 @@ import { AuthContext } from "../context/AuthProvider";
 import { useForm } from "react-hook-form";
 import CandidateCard from "./CandidateCard";
 import CandidateCardAdmin from "./CandidateCardAdmin";
-import kriterien from "../assets/kriterien2.png";
+import kriterien from "../assets/kriterien3.png";
 
 export default function Home() {
   const { user, logout, login, candidates } = useContext(AuthContext);
@@ -196,7 +196,7 @@ export default function Home() {
                     className="font-anek text-md lg:text-lg mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
                   >
                     <div className="items-center grid grid-cols-1 lg:grid-cols-3 gap-4">
-                      <div className="text-center pl-[0%] lg:col-span-1 lg:pl-[10%] lg:text-left">
+                      <div className="text-center pl-[0%] lg:pl-[10%] lg:text-left">
                         <p className="text-gray-600 font-medium pr-0 lg:pr-6">
                           Liebes Team, unser großes Ziel ist es, nur die besten
                           Mitarbeiter zu beschäftigen. Bei dem Team Assessment
@@ -214,14 +214,14 @@ export default function Home() {
                           bewertet hast.
                         </p>
                       </div>
-                      <div className="flex justify-center items-center lg:col-span-1">
+                      <div className="flex justify-center items-center">
                         <img
-                          className="inline-block w-[90%] lg:w-auto"
+                          className="w-full max-w-lg lg:max-w-[100%]"
                           src={kriterien}
                           alt="logo"
                         />
                       </div>
-                      <div className="pr-[0%] lg:col-span-1 lg:text-right lg:pr-[10%]">
+                      <div className="pr-[0%] lg:text-right lg:pr-[10%]">
                         <p className="text-center text-gray-500 font-medium lg:text-right lg:pl-4">
                           Du brauchst für die Bewertung aller Kollegen ca. 10
                           Minuten. Falls du zu einigen Kollegen nicht direkt
@@ -245,6 +245,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+
                   <div
                     hidden={visibilityEnglish}
                     className="font-anek text-md lg:text-lg mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
