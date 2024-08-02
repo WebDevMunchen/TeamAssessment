@@ -172,24 +172,24 @@ export default function Home() {
             <>
               {user.role === "user" ? (
                 <>
-<div className="hero flex justify-around items-center bg-cover bg-center p-4">
-  <div className="invisible">placeholder</div>
-  <div className="flex justify-center">
-    <img
-      className="w-1/6 ml-36"
-      src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
-      alt="logo"
-    />
-  </div>
-  <div className="mr-6 flex items-center">
-    <button 
-      onClick={handleVisibility} 
-      className="bg-black text-white font-semibold py-2 px-4 rounded hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 whitespace-nowrap"
-    >
-      Übersetzen / Translate 
-    </button>
-  </div>
-</div>
+                  <div className="hero flex justify-around items-center bg-cover bg-center p-4">
+                    <div className="invisible">placeholder</div>
+                    <div className="flex justify-center">
+                      <img
+                        className="w-1/6 ml-36"
+                        src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
+                        alt="logo"
+                      />
+                    </div>
+                    <div className="mr-6 flex items-center">
+                      <button
+                        onClick={handleVisibility}
+                        className="bg-black text-white font-semibold py-2 px-4 rounded hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 whitespace-nowrap"
+                      >
+                        Übersetzen / Translate
+                      </button>
+                    </div>
+                  </div>
 
                   <div
                     hidden={visibilityGerman}
@@ -282,7 +282,7 @@ export default function Home() {
                         </p>
                         <p className="text-center text-gray-500 font-medium mt-6 lg:text-right">
                           This survey is open from
-                          <span className="font-extrabold text-black">
+                          <span className="font-extrabold text-black mr-0.5">
                             {" "}
                             July 16th
                           </span>
