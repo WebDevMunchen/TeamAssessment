@@ -4,7 +4,8 @@ import { AuthContext } from "../context/AuthProvider";
 import { useForm } from "react-hook-form";
 import CandidateCard from "./CandidateCard";
 import CandidateCardAdmin from "./CandidateCardAdmin";
-import kriterien from "../assets/kriterien2.png";
+import englisch from "../assets/TA_englisch.png";
+import deutsch from "../assets/TA_deutsch.png";
 
 export default function Home() {
   const { user, logout, login, candidates } = useContext(AuthContext);
@@ -172,7 +173,7 @@ export default function Home() {
             <>
               {user.role === "user" ? (
                 <>
-                  <div className="hero flex justify-around items-center bg-cover bg-center p-4">
+                  <div className="hidden lg:hero lg:flex justify-around items-center bg-cover bg-center p-4">
                     <div className="invisible">placeholder</div>
                     <div className="flex justify-center">
                       <img
@@ -181,7 +182,7 @@ export default function Home() {
                         alt="logo"
                       />
                     </div>
-                    <div className="mr-6 flex items-center">
+                    <div className="hidden lg:flex mr-6 flex items-center">
                       <button
                         onClick={handleVisibility}
                         className="bg-black text-white font-semibold py-2 px-4 rounded hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 whitespace-nowrap"
@@ -190,10 +191,24 @@ export default function Home() {
                       </button>
                     </div>
                   </div>
-
+                  <div className="flex justify-center">
+                    <img
+                      className="w-4/6 lg:hidden"
+                      src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
+                      alt="logo"
+                    />
+                  </div>
+                  <div className="mb-4 flex justify-center items-center lg:hidden">
+                    <button
+                      onClick={handleVisibility}
+                      className="bg-black text-white font-semibold py-2 px-4 rounded hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 whitespace-nowrap"
+                    >
+                      Übersetzen / Translate
+                    </button>
+                  </div>
                   <div
                     hidden={visibilityGerman}
-                    className="font-anek text-md lg:text-lg mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
+                    className="mt-0 px-2 font-anek text-md lg:text-lg lg:mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
                   >
                     <div className="items-center grid grid-cols-1 lg:grid-cols-3 gap-4">
                       <div className="text-center pl-[0%] lg:col-span-1 lg:pl-[10%] lg:text-left">
@@ -217,7 +232,7 @@ export default function Home() {
                       <div className="flex justify-center items-center lg:col-span-1">
                         <img
                           className="inline-block w-[90%] lg:w-auto"
-                          src={kriterien}
+                          src={deutsch}
                           alt="logo"
                         />
                       </div>
@@ -247,7 +262,7 @@ export default function Home() {
                   </div>
                   <div
                     hidden={visibilityEnglish}
-                    className="font-anek text-md lg:text-lg mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
+                    className="px-2 font-anek text-md lg:text-lg mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
                   >
                     <div className="items-center grid grid-cols-1 lg:grid-cols-3 gap-4">
                       <div className="text-center pl-[0%] lg:col-span-1 lg:pl-[10%] lg:text-left">
@@ -269,7 +284,7 @@ export default function Home() {
                       <div className="flex justify-center items-center lg:col-span-1">
                         <img
                           className="inline-block w-[90%] lg:w-auto"
-                          src={kriterien}
+                          src={englisch}
                           alt="logo"
                         />
                       </div>
@@ -297,40 +312,67 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex justify-center">
-                    <p className="mt-6 mb-6 font-bold lg:mt-8">
-                      Skala der Bewertung
-                    </p>
-                  </div>
+                  {visibilityEnglish && (
+          <>
+            <div className="flex justify-center">
+              <p className="mt-6 mb-6 font-bold lg:mt-8">
+                Skala der Bewertung
+              </p>
+            </div>
 
-                  <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <p>
-                      <span className="font-bold">10 Sterne:</span>{" "}
-                      Herrvorrangender Wert, weit mehr als gefordert. Perfekt!
-                    </p>
-                    <p>
-                      <span className="font-bold">8 bis 9 Sterne:</span> sehr
-                      gut, überdurchschnittlich, mit etwas Luft nach oben
-                    </p>
-                    <p>
-                      <span className="font-bold">6 bis 7 Sterne:</span>{" "}
-                      Durchschnittlich, anderswo normal, mit Raum, sich zu
-                      steigern
-                    </p>
-                    <p>
-                      <span className="font-bold">4 bis 5 Sterne:</span> Im
-                      Moment nicht sehr gut, sollte sich verbessern
-                    </p>
-                    <p>
-                      <span className="font-bold">2 bis 3 Sterne:</span>{" "}
-                      Schlecht, etwas sollte sich rasch verbessern
-                    </p>
-                    <p>
-                      <span className="font-bold">1 Stern:</span> Sehr Schlecht,
-                      wird sich nicht verbessern / verändern
-                    </p>
-                  </div>
+            <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <p>
+                <span className="font-bold">10 Sterne:</span> Hervorragender Wert, weit mehr als gefordert. Perfekt!
+              </p>
+              <p>
+                <span className="font-bold">8 bis 9 Sterne:</span> Sehr gut, überdurchschnittlich, mit etwas Luft nach oben
+              </p>
+              <p>
+                <span className="font-bold">6 bis 7 Sterne:</span> Durchschnittlich, anderswo normal, mit Raum, sich zu steigern
+              </p>
+              <p>
+                <span className="font-bold">4 bis 5 Sterne:</span> Im Moment nicht sehr gut, sollte sich verbessern
+              </p>
+              <p>
+                <span className="font-bold">2 bis 3 Sterne:</span> Schlecht, etwas sollte sich rasch verbessern
+              </p>
+              <p>
+                <span className="font-bold">1 Stern:</span> Sehr Schlecht, wird sich nicht verbessern / verändern
+              </p>
+            </div>
+          </>
+        )}
 
+        {visibilityGerman && (
+          <>
+            <div className="flex justify-center">
+              <p className="mt-6 mb-6 font-bold lg:mt-8">
+                Scale of evaluation
+              </p>
+            </div>
+
+            <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <p>
+                <span className="font-bold">10 Sterne:</span> Excellent value, far more than asked for. Perfect!
+              </p>
+              <p>
+                <span className="font-bold">8 to 9 Sterne:</span> Very good, above average, with some room for improvement
+              </p>
+              <p>
+                <span className="font-bold">6 to 7 Sterne:</span> Average, normal elsewhere, with room to improve
+              </p>
+              <p>
+                <span className="font-bold">4 to 5 Sterne:</span> Not very good at the moment, should improve
+              </p>
+              <p>
+                <span className="font-bold">2 to 3 Sterne:</span> Bad, something should improve quickly
+              </p>
+              <p>
+                <span className="font-bold">1 Stern:</span> Very bad, will not improve / change
+              </p>
+            </div>
+          </>
+)}
                   <div className="font-anek mb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {candidates.map((candidate) => (
                       <CandidateCard
