@@ -7,6 +7,12 @@ const jwt = require("jsonwebtoken");
 const createUser = asyncWrapper(async (req, res, next) => {
   const { logInID, password } = req.body;
 
+  const match = await User.findOne({ logInID });
+
+  if (match) {
+    throw new ErrorResponse("User already exists!");
+  }
+
   const user = await User.create({
     logInID,
     password,

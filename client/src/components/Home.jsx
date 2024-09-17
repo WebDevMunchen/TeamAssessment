@@ -57,7 +57,7 @@ export default function Home() {
           </dialog>{" "}
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
             <a className="btn btn-ghost text-md lg:text-xl">
-              Team Assessment | RG München Q-2
+              Team Assessment | RG München Q-3
             </a>
           </div>
           <div className="mt-6 hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
@@ -114,7 +114,7 @@ export default function Home() {
             <div></div>
             <div className="flex items-center">
               <a className="ml-8 btn btn-ghost text-sm lg:text-lg lg:ml-32">
-                Team Assessment | RG München Q-2
+                Team Assessment | RG München Q-3
               </a>
             </div>
             <div>
@@ -248,12 +248,12 @@ export default function Home() {
                           Diese Umfrage ist vom
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            16.07.
+                            19.09.
                           </span>
                           bis
                           <span className="font-extrabold text-black">
                             {" "}
-                            29.07.2024{" "}
+                            26.09.2024{" "}
                           </span>
                           geöffnet.
                         </p>
@@ -299,12 +299,12 @@ export default function Home() {
                           This survey is open from
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            July 16th
+                            July 19th
                           </span>
                           until
                           <span className="font-extrabold text-black">
                             {" "}
-                            July 29th, 2024{" "}
+                            July 26th, 2024{" "}
                           </span>
                           .
                         </p>
