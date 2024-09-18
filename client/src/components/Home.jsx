@@ -1,12 +1,17 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { useForm } from "react-hook-form";
 import CandidateCard from "./CandidateCard";
 import CandidateCardAdmin from "./CandidateCardAdmin";
+import englisch from "../assets/TA_englisch.png";
+import deutsch from "../assets/TA_deutsch.png";
 
 export default function Home() {
   const { user, logout, login, candidates } = useContext(AuthContext);
+
+  const [visibilityGerman, setVisibilityGerman] = useState(false);
+  const [visibilityEnglish, setVisibilityEnglish] = useState(true);
 
   const {
     register,
@@ -16,6 +21,16 @@ export default function Home() {
 
   const onSubmit = (data) => {
     login(data);
+  };
+
+  const handleVisibility = () => {
+    if (visibilityGerman === false && visibilityEnglish === true) {
+      setVisibilityGerman(true);
+      setVisibilityEnglish(false);
+    } else {
+      setVisibilityGerman(false);
+      setVisibilityEnglish(true);
+    }
   };
 
   return (
@@ -42,7 +57,7 @@ export default function Home() {
           </dialog>{" "}
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
             <a className="btn btn-ghost text-md lg:text-xl">
-              Team Assessment | RG München Q-2
+              Team Assessment | RG München Q-3
             </a>
           </div>
           <div className="mt-6 hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
@@ -99,7 +114,7 @@ export default function Home() {
             <div></div>
             <div className="flex items-center">
               <a className="ml-8 btn btn-ghost text-sm lg:text-lg lg:ml-32">
-                Team Assessment | RG München Q-2
+                Team Assessment | RG München Q-3
               </a>
             </div>
             <div>
@@ -153,110 +168,211 @@ export default function Home() {
           {!candidates ? (
             <div className="flex justify-center mt-8">
               <div className=" border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
-
             </div>
           ) : (
             <>
               {user.role === "user" ? (
                 <>
-                  <p className="hidden lg:flex justify-end  mr-5 mt-3 font-semibold">
-                    Anmelde ID:{" "}
-                    <span className="font-bold ml-1">{" " + user.logInID}</span>
-                  </p>
-
-                  <div className="font-anek text-md flex justify-end lg:text-lg">
-                    <div></div>
-                    <div className="hero flex justify-center items-center h-2/6 w-6/6 mt-6 bg-cover bg-center ml-auto mr-auto text-center lg:w-4/12">
-                      <div className="max-w-xxl">
-                        <div className="hero flex justify-center items-center h-2/6 w-2/6 bg-cover bg-center ml-auto mr-auto lg:w-3/6">
-                          <img
-                            className="inline"
-                            src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
-                            alt="logo"
-                          />
-                        </div>
-                        <p className="text-gray-600 font-medium mt-6 ml-4 mr-4 lg:mt-0">
+                  <div className="hidden lg:hero lg:flex justify-around items-center bg-cover bg-center p-4">
+                    <div className="invisible">placeholder</div>
+                    <div className="flex justify-center">
+                      <img
+                        className="w-1/6 ml-36"
+                        src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
+                        alt="logo"
+                      />
+                    </div>
+                    <div className="hidden lg:flex mr-6 flex items-center">
+                      <button
+                        onClick={handleVisibility}
+                        className="bg-black text-white font-semibold py-2 px-4 rounded hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 whitespace-nowrap"
+                      >
+                        Übersetzen / Translate
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex justify-center">
+                    <img
+                      className="w-4/6 lg:hidden"
+                      src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
+                      alt="logo"
+                    />
+                  </div>
+                  <div className="mb-4 flex justify-center items-center lg:hidden">
+                    <button
+                      onClick={handleVisibility}
+                      className="bg-black text-white font-semibold py-2 px-4 rounded hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 whitespace-nowrap"
+                    >
+                      Übersetzen / Translate
+                    </button>
+                  </div>
+                  <div
+                    hidden={visibilityGerman}
+                    className="mt-0 px-2 font-anek text-md lg:text-lg lg:mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
+                  >
+                    <div className="items-center grid grid-cols-1 lg:grid-cols-3 gap-4">
+                      <div className="text-center pl-[0%] lg:col-span-1 lg:pl-[10%] lg:text-left">
+                        <p className="text-gray-600 font-medium pr-0 lg:pr-6">
                           Liebes Team, unser großes Ziel ist es, nur die besten
                           Mitarbeiter zu beschäftigen. Bei dem Team Assessment
                           geht es darum, das persönliche Engagement aller
                           Mitarbeiter zu bewerten.
                         </p>
-                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
-                          Du bewertest Einsatzbereitschaft, Engagement, den
-                          persönlichen Beitrag zu Gruppenzielen, die
-                          Bereitschaft anderen zu helfen, die Teamfähigkeit, die
-                          ehrliche Bemühung, dem Kunden zu helfen,
-                          Qualitätsbewusstsein, das Leben unserer Werte. Also
-                          grundsätzlich die Dinge, die wir als Unternehmen
-                          anstreben.
-                        </p>{" "}
-                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
-                          Bitte mach dir bewusst, dass es nicht darum geht, ob
-                          du den Lebensstil oder den Charakter des Kollegen
-                          magst oder nicht.
-                        </p>
-                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
-                          Diese Anfrage ist{" "} 
+                        <p className="text-gray-500 font-medium mt-6">
+                          Diese Anfrage ist
                           <span className="font-extrabold text-black">
-                             anonym
+                            {" "}
+                            anonym
                           </span>
-                          . Das bedeutet, dass niemand,
-                          auch nicht die Geschäftsführung, erfährt, wie du deine
-                          Kollegen bewertet hast.
+                          . Das bedeutet, dass niemand, auch nicht die
+                          Geschäftsführung, erfährt, wie du deine Kollegen
+                          bewertet hast.
                         </p>
-                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
+                      </div>
+                      <div className="flex justify-center items-center lg:col-span-1">
+                        <img
+                          className="inline-block w-[90%] lg:w-auto"
+                          src={deutsch}
+                          alt="logo"
+                        />
+                      </div>
+                      <div className="pr-[0%] lg:col-span-1 lg:text-right lg:pr-[10%]">
+                        <p className="text-center text-gray-500 font-medium lg:text-right lg:pl-4">
                           Du brauchst für die Bewertung aller Kollegen ca. 10
                           Minuten. Falls du zu einigen Kollegen nicht direkt
                           eine Meinung hast, kannst du dich auch zu einem
                           späteren Zeitpunkt wieder einloggen und deine Meinung
                           zu diesen abgeben.
                         </p>
-                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
-                          Diese Umfrage ist vom{" "}
+                        <p className="text-center text-gray-500 font-medium mt-6 lg:text-right">
+                          Diese Umfrage ist vom
+                          <span className="font-extrabold text-black mr-0.5">
+                            {" "}
+                            19.09.
+                          </span>
+                          bis
                           <span className="font-extrabold text-black">
-                            16.07.
-                          </span>{" "}
-                          bis{" "}
-                          <span className="font-extrabold text-black">
-                            29.07.2024
-                          </span>{" "}
+                            {" "}
+                            26.09.2024{" "}
+                          </span>
                           geöffnet.
                         </p>
-                        <p className="mt-10 ml-4 mr-4 mb-6 font-bold">
-                          Skala der Bewertung
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    hidden={visibilityEnglish}
+                    className="px-2 font-anek text-md lg:text-lg mt-6 bg-cover bg-center mx-auto text-center max-w-xxl"
+                  >
+                    <div className="items-center grid grid-cols-1 lg:grid-cols-3 gap-4">
+                      <div className="text-center pl-[0%] lg:col-span-1 lg:pl-[10%] lg:text-left">
+                        <p className="text-gray-600 font-medium pr-0 lg:pr-6">
+                          Dear team, our main goal is to employ only the best
+                          employees. The team assessment is about evaluating the
+                          personal engagement of all employees.
+                        </p>
+                        <p className="text-gray-500 font-medium mt-6">
+                          This request is
+                          <span className="font-extrabold text-black">
+                            {" "}
+                            anonymous
+                          </span>
+                          . This means that no one, not even the management,
+                          will know how you rated your colleagues.
+                        </p>
+                      </div>
+                      <div className="flex justify-center items-center lg:col-span-1">
+                        <img
+                          className="inline-block w-[90%] lg:w-auto"
+                          src={englisch}
+                          alt="logo"
+                        />
+                      </div>
+                      <div className="pr-[0%] lg:col-span-1 lg:text-right lg:pr-[10%]">
+                        <p className="text-center text-gray-500 font-medium lg:text-right lg:pl-4">
+                          You will need about 10 minutes to rate all colleagues.
+                          If you don't have an immediate opinion about some
+                          colleagues, you can log in again later and provide
+                          your opinion on them.
+                        </p>
+                        <p className="text-center text-gray-500 font-medium mt-6 lg:text-right">
+                          This survey is open from
+                          <span className="font-extrabold text-black mr-0.5">
+                            {" "}
+                            July 19th
+                          </span>
+                          until
+                          <span className="font-extrabold text-black">
+                            {" "}
+                            July 26th, 2024{" "}
+                          </span>
+                          .
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <p>
-                      <span className="font-bold">10 Sterne:</span>{" "}
-                      Herrvorrangender Wert, weit mehr als gefordert. Perfekt!
-                    </p>
-                    <p>
-                      <span className="font-bold">8 bis 9 Sterne:</span> sehr
-                      gut, überdurchschnittlich, mit etwas Luft nach oben
-                    </p>
-                    <p>
-                      <span className="font-bold">6 bis 7 Sterne:</span>{" "}
-                      Durchschnittlich, anderswo normal, mit Raum, sich zu
-                      steigern
-                    </p>
-                    <p>
-                      <span className="font-bold">4 bis 5 Sterne:</span> Im
-                      Moment nicht sehr gut, sollte sich verbessern
-                    </p>
-                    <p>
-                      <span className="font-bold">2 bis 3 Sterne:</span>{" "}
-                      Schlecht, etwas sollte sich rasch verbessern
-                    </p>
-                    <p>
-                      <span className="font-bold">1 Stern:</span> Sehr Schlecht,
-                      wird sich nicht verbessern / verändern
-                    </p>
-                  </div>
+                  {visibilityEnglish && (
+          <>
+            <div className="flex justify-center">
+              <p className="mt-6 mb-6 font-bold lg:mt-8">
+                Skala der Bewertung
+              </p>
+            </div>
 
+            <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <p>
+                <span className="font-bold">10 Sterne:</span> Hervorragender Wert, weit mehr als gefordert. Perfekt!
+              </p>
+              <p>
+                <span className="font-bold">8 bis 9 Sterne:</span> Sehr gut, überdurchschnittlich, mit etwas Luft nach oben
+              </p>
+              <p>
+                <span className="font-bold">6 bis 7 Sterne:</span> Durchschnittlich, anderswo normal, mit Raum, sich zu steigern
+              </p>
+              <p>
+                <span className="font-bold">4 bis 5 Sterne:</span> Im Moment nicht sehr gut, sollte sich verbessern
+              </p>
+              <p>
+                <span className="font-bold">2 bis 3 Sterne:</span> Schlecht, etwas sollte sich rasch verbessern
+              </p>
+              <p>
+                <span className="font-bold">1 Stern:</span> Sehr Schlecht, wird sich nicht verbessern / verändern
+              </p>
+            </div>
+          </>
+        )}
+
+        {visibilityGerman && (
+          <>
+            <div className="flex justify-center">
+              <p className="mt-6 mb-6 font-bold lg:mt-8">
+                Scale of evaluation
+              </p>
+            </div>
+
+            <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <p>
+                <span className="font-bold">10 Sterne:</span> Excellent value, far more than asked for. Perfect!
+              </p>
+              <p>
+                <span className="font-bold">8 to 9 Sterne:</span> Very good, above average, with some room for improvement
+              </p>
+              <p>
+                <span className="font-bold">6 to 7 Sterne:</span> Average, normal elsewhere, with room to improve
+              </p>
+              <p>
+                <span className="font-bold">4 to 5 Sterne:</span> Not very good at the moment, should improve
+              </p>
+              <p>
+                <span className="font-bold">2 to 3 Sterne:</span> Bad, something should improve quickly
+              </p>
+              <p>
+                <span className="font-bold">1 Stern:</span> Very bad, will not improve / change
+              </p>
+            </div>
+          </>
+)}
                   <div className="font-anek mb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {candidates.map((candidate) => (
                       <CandidateCard
