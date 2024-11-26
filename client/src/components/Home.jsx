@@ -57,7 +57,7 @@ export default function Home() {
           </dialog>{" "}
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
             <a className="btn btn-ghost text-md lg:text-xl">
-              Team Assessment | RG München Q-3
+              Team Assessment | RG München Q-4
             </a>
           </div>
           <div className="mt-6 hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
@@ -114,7 +114,7 @@ export default function Home() {
             <div></div>
             <div className="flex items-center">
               <a className="ml-8 btn btn-ghost text-sm lg:text-lg lg:ml-32">
-                Team Assessment | RG München Q-3
+                Team Assessment | RG München Q-4
               </a>
             </div>
             <div>
@@ -219,7 +219,7 @@ export default function Home() {
                           Mitarbeiter zu bewerten.
                         </p>
                         <p className="text-gray-500 font-medium mt-6">
-                          Diese Anfrage ist
+                          Diese Umfrage ist
                           <span className="font-extrabold text-black">
                             {" "}
                             anonym
@@ -248,12 +248,12 @@ export default function Home() {
                           Diese Umfrage ist vom
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            19.09.
+                            04.12.
                           </span>
                           bis
                           <span className="font-extrabold text-black">
                             {" "}
-                            26.09.2024{" "}
+                            18.12.2024{" "}
                           </span>
                           geöffnet.
                         </p>
@@ -272,7 +272,7 @@ export default function Home() {
                           personal engagement of all employees.
                         </p>
                         <p className="text-gray-500 font-medium mt-6">
-                          This request is
+                          This survey is
                           <span className="font-extrabold text-black">
                             {" "}
                             anonymous
@@ -299,12 +299,12 @@ export default function Home() {
                           This survey is open from
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            July 19th
+                            04.12.
                           </span>
                           until
                           <span className="font-extrabold text-black">
                             {" "}
-                            July 26th, 2024{" "}
+                            18.12.2024.{" "}
                           </span>
                           .
                         </p>
