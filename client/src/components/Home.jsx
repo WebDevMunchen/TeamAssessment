@@ -248,7 +248,7 @@ export default function Home() {
                           Diese Umfrage ist vom
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            04.12.
+                            05.12.
                           </span>
                           bis
                           <span className="font-extrabold text-black">
@@ -299,7 +299,7 @@ export default function Home() {
                           This survey is open from
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            04.12.
+                            05.12.
                           </span>
                           until
                           <span className="font-extrabold text-black">
