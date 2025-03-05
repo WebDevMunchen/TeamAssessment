@@ -57,7 +57,7 @@ export default function Home() {
           </dialog>{" "}
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
             <a className="btn btn-ghost text-md lg:text-xl">
-              Team Assessment | RG München Q-4
+              Team Assessment | RG München Q-1
             </a>
           </div>
           <div className="mt-6 hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
@@ -114,7 +114,7 @@ export default function Home() {
             <div></div>
             <div className="flex items-center">
               <a className="ml-8 btn btn-ghost text-sm lg:text-lg lg:ml-32">
-                Team Assessment | RG München Q-4
+                Team Assessment | RG München Q-1
               </a>
             </div>
             <div>
@@ -248,12 +248,12 @@ export default function Home() {
                           Diese Umfrage ist vom
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            05.12.
+                            10.03.
                           </span>
                           bis
                           <span className="font-extrabold text-black">
                             {" "}
-                            18.12.2024{" "}
+                            20.03.2025{" "}
                           </span>
                           geöffnet.
                         </p>
@@ -299,12 +299,12 @@ export default function Home() {
                           This survey is open from
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            05.12.
+                            10.03.
                           </span>
                           until
                           <span className="font-extrabold text-black">
                             {" "}
-                            18.12.2024.{" "}
+                            20.03.2025.{" "}
                           </span>
                           .
                         </p>
@@ -313,66 +313,80 @@ export default function Home() {
                   </div>
 
                   {visibilityEnglish && (
-          <>
-            <div className="flex justify-center">
-              <p className="mt-6 mb-6 font-bold lg:mt-8">
-                Skala der Bewertung
-              </p>
-            </div>
+                    <>
+                      <div className="flex justify-center">
+                        <p className="mt-6 mb-6 font-bold lg:mt-8">
+                          Skala der Bewertung
+                        </p>
+                      </div>
 
-            <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <p>
-                <span className="font-bold">10 Sterne:</span> Hervorragender Wert, weit mehr als gefordert. Perfekt!
-              </p>
-              <p>
-                <span className="font-bold">8 bis 9 Sterne:</span> Sehr gut, überdurchschnittlich, mit etwas Luft nach oben
-              </p>
-              <p>
-                <span className="font-bold">6 bis 7 Sterne:</span> Durchschnittlich, anderswo normal, mit Raum, sich zu steigern
-              </p>
-              <p>
-                <span className="font-bold">4 bis 5 Sterne:</span> Im Moment nicht sehr gut, sollte sich verbessern
-              </p>
-              <p>
-                <span className="font-bold">2 bis 3 Sterne:</span> Schlecht, etwas sollte sich rasch verbessern
-              </p>
-              <p>
-                <span className="font-bold">1 Stern:</span> Sehr Schlecht, wird sich nicht verbessern / verändern
-              </p>
-            </div>
-          </>
-        )}
+                      <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <p>
+                          <span className="font-bold">10 Sterne:</span>{" "}
+                          Hervorragender Wert, weit mehr als gefordert. Perfekt!
+                        </p>
+                        <p>
+                          <span className="font-bold">8 bis 9 Sterne:</span>{" "}
+                          Sehr gut, überdurchschnittlich, mit etwas Luft nach
+                          oben
+                        </p>
+                        <p>
+                          <span className="font-bold">6 bis 7 Sterne:</span>{" "}
+                          Durchschnittlich, anderswo normal, mit Raum, sich zu
+                          steigern
+                        </p>
+                        <p>
+                          <span className="font-bold">4 bis 5 Sterne:</span> Im
+                          Moment nicht sehr gut, sollte sich verbessern
+                        </p>
+                        <p>
+                          <span className="font-bold">2 bis 3 Sterne:</span>{" "}
+                          Schlecht, etwas sollte sich rasch verbessern
+                        </p>
+                        <p>
+                          <span className="font-bold">1 Stern:</span> Sehr
+                          Schlecht, wird sich nicht verbessern / verändern
+                        </p>
+                      </div>
+                    </>
+                  )}
 
-        {visibilityGerman && (
-          <>
-            <div className="flex justify-center">
-              <p className="mt-6 mb-6 font-bold lg:mt-8">
-                Scale of evaluation
-              </p>
-            </div>
+                  {visibilityGerman && (
+                    <>
+                      <div className="flex justify-center">
+                        <p className="mt-6 mb-6 font-bold lg:mt-8">
+                          Scale of evaluation
+                        </p>
+                      </div>
 
-            <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <p>
-                <span className="font-bold">10 Sterne:</span> Excellent value, far more than asked for. Perfect!
-              </p>
-              <p>
-                <span className="font-bold">8 to 9 Sterne:</span> Very good, above average, with some room for improvement
-              </p>
-              <p>
-                <span className="font-bold">6 to 7 Sterne:</span> Average, normal elsewhere, with room to improve
-              </p>
-              <p>
-                <span className="font-bold">4 to 5 Sterne:</span> Not very good at the moment, should improve
-              </p>
-              <p>
-                <span className="font-bold">2 to 3 Sterne:</span> Bad, something should improve quickly
-              </p>
-              <p>
-                <span className="font-bold">1 Stern:</span> Very bad, will not improve / change
-              </p>
-            </div>
-          </>
-)}
+                      <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <p>
+                          <span className="font-bold">10 Sterne:</span>{" "}
+                          Excellent value, far more than asked for. Perfect!
+                        </p>
+                        <p>
+                          <span className="font-bold">8 to 9 Sterne:</span> Very
+                          good, above average, with some room for improvement
+                        </p>
+                        <p>
+                          <span className="font-bold">6 to 7 Sterne:</span>{" "}
+                          Average, normal elsewhere, with room to improve
+                        </p>
+                        <p>
+                          <span className="font-bold">4 to 5 Sterne:</span> Not
+                          very good at the moment, should improve
+                        </p>
+                        <p>
+                          <span className="font-bold">2 to 3 Sterne:</span> Bad,
+                          something should improve quickly
+                        </p>
+                        <p>
+                          <span className="font-bold">1 Stern:</span> Very bad,
+                          will not improve / change
+                        </p>
+                      </div>
+                    </>
+                  )}
                   <div className="font-anek mb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {candidates.map((candidate) => (
                       <CandidateCard
