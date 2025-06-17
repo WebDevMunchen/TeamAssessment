@@ -57,7 +57,7 @@ export default function Home() {
           </dialog>{" "}
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
             <a className="btn btn-ghost text-md lg:text-xl">
-              Team Assessment | RG München Q-1
+              Team Assessment | RG München Q-2
             </a>
           </div>
           <div className="mt-6 hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
@@ -114,7 +114,7 @@ export default function Home() {
             <div></div>
             <div className="flex items-center">
               <a className="ml-8 btn btn-ghost text-sm lg:text-lg lg:ml-32">
-                Team Assessment | RG München Q-1
+                Team Assessment | RG München Q-2
               </a>
             </div>
             <div>
