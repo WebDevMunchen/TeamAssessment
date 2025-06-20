@@ -66,7 +66,7 @@ export default function Home() {
               alt="logo"
             />
           </div>
-          {/* <div className="hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
+          <div className="hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
             <div>
               <p className="font-anek text-gray-600 font-medium mt-4">
                 Nimm dir einen Moment Zeit, um deine Kollegen zu bewerten. Melde
@@ -106,7 +106,7 @@ export default function Home() {
                 className="bg-gradient-to-b from-gray-700 to-gray-900 font-medium p-2 md:p-4 text-white uppercase w-full rounded cursor-pointer"
               />
             </form>
-          </div> */}
+          </div>
 
                     <div className="hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
             <div>
@@ -256,12 +256,12 @@ export default function Home() {
                           Diese Umfrage ist vom
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            10.03.
+                            14.07.
                           </span>
                           bis
                           <span className="font-extrabold text-black">
                             {" "}
-                            20.03.2025{" "}
+                            25.07.2025{" "}
                           </span>
                           geöffnet.
                         </p>
@@ -307,12 +307,12 @@ export default function Home() {
                           This survey is open from
                           <span className="font-extrabold text-black mr-0.5">
                             {" "}
-                            10.03.
+                            14.07.
                           </span>
                           until
                           <span className="font-extrabold text-black">
                             {" "}
-                            20.03.2025.{" "}
+                            25.07.2025.{" "}
                           </span>
                           .
                         </p>
