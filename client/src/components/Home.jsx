@@ -111,7 +111,7 @@ export default function Home() {
             <div>
               <p className="text-2xl font-anek text-gray-600 font-medium mt-4">
                 Das Team-Assessment beginnt erst vom{" "}
-                <span className="font-extrabold">10. bis 24. August</span>. Eine
+                <span className="font-extrabold">10. bis 24. September</span>. Eine
                 Anmeldung ist daher noch nicht möglich.
               </p>
             </div>
