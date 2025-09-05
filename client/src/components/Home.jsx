@@ -66,7 +66,7 @@ export default function Home() {
               alt="logo"
             />
           </div>
-          {/* <div className="hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
+          <div className="hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
             <div>
               <p className="font-anek text-gray-600 font-medium mt-4">
                 Nimm dir einen Moment Zeit, um deine Kollegen zu bewerten. Melde
@@ -106,8 +106,8 @@ export default function Home() {
                 className="bg-gradient-to-b from-gray-700 to-gray-900 font-medium p-2 md:p-4 text-white uppercase w-full rounded cursor-pointer"
               />
             </form>
-          </div> */}
-          <div className="hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
+          </div>
+          {/* <div className="hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
             <div>
               <p className="text-2xl font-anek text-gray-600 font-medium mt-4">
                 Das Team-Assessment beginnt erst vom{" "}
@@ -115,7 +115,7 @@ export default function Home() {
                 Anmeldung ist daher noch nicht möglich.
               </p>
             </div>
-          </div>
+          </div> */}
         </>
       ) : (
         <>
