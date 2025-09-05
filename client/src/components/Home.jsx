@@ -57,7 +57,7 @@ export default function Home() {
           </dialog>{" "}
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
             <a className="btn btn-ghost text-md lg:text-xl">
-              Team Assessment | RG München Q-2
+              Team Assessment | RG München Q-3
             </a>
           </div>
           <div className="mt-6 hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
@@ -111,7 +111,7 @@ export default function Home() {
             <div>
               <p className="text-2xl font-anek text-gray-600 font-medium mt-4">
                 Das Team-Assessment beginnt erst vom{" "}
-                <span className="font-extrabold">14. bis 25. Juli</span>. Eine
+                <span className="font-extrabold">10. bis 24. August</span>. Eine
                 Anmeldung ist daher noch nicht möglich.
               </p>
             </div>
@@ -123,7 +123,7 @@ export default function Home() {
             <div></div>
             <div className="flex items-center">
               <a className="ml-8 btn btn-ghost text-sm lg:text-lg lg:ml-32">
-                Team Assessment | RG München Q-2
+                Team Assessment | RG München Q-3
               </a>
             </div>
             <div>
