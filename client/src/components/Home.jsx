@@ -74,8 +74,8 @@ export default function Home() {
                 erhalten hast!
               </p>
             </div>
-          </div>
-          <div className="bg-white lg:w-3/12 md:7/12 w-8/12 shadow-3xl rounded-xl ml-auto mr-auto">
+          </div> */}
+          {/* <div className="bg-white lg:w-3/12 md:7/12 w-8/12 shadow-3xl rounded-xl ml-auto mr-auto">
             <form onSubmit={handleSubmit(onSubmit)} className="mt-16">
               <div className="flex items-center text-lg mb-6 md:mb-8 ">
                 <svg className="absolute ml-3" width="24" viewBox="0 0 24 24">
